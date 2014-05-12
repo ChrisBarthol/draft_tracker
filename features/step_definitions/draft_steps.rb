@@ -1,4 +1,4 @@
-Given(/^an order with round (\d+) and pick (\d+)$/) do |arg1, arg2|
+Given(/^an order with round (\d+) and pick (\d+)$/) do |round, pick|
   pending # express the regexp above with the code you wish you had
 end
 
@@ -7,7 +7,7 @@ Given(/^a team "(.*?)"$/) do |arg1|
 end
 
 When(/^I visit the draft page$/) do
-  pending # express the regexp above with the code you wish you had
+  visit draft_url
 end
 
 Given(/^a drafted player and an undrafted player$/) do
@@ -15,7 +15,8 @@ Given(/^a drafted player and an undrafted player$/) do
 end
 
 Given(/^an order and team$/) do
-  pending # express the regexp above with the code you wish you had
+  order = FactoryGirl.create(:order)
+  team = FactoryGirl.create(:team)
 end
 
 Then(/^the undrafted player should be in the draft list$/) do

@@ -21,7 +21,6 @@ group :development, :test do
   gem 'guard-rspec'
   gem 'spork-rails', github: 'sporkrb/spork-rails'
   gem 'guard-spork'
-  gem 'cucumber-rails'
 end
 
 group :test do
@@ -29,6 +28,7 @@ group :test do
   gem 'capybara'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
+  gem 'cucumber-rails'
 end
 
 

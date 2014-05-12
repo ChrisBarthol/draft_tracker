@@ -3,7 +3,7 @@ Given(/^(\d+) drafted players$/) do |arg1|
 end
 
 When(/^I visit the live page$/) do
-  pending # express the regexp above with the code you wish you had
+  visit live_path
 end
 
 Then(/^I should see the three players listed$/) do
