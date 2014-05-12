@@ -1,23 +1,33 @@
 <div class="center hero-unit">
 	<h1>NFL Draft Results</h1>
 </div>
-
+<h3>Sort by Team</h3>
+<%= render partial: 'static_pages/sort_by_team' %>
+<h3>Sort by Round</h3>
+<%= render partial: 'static_pages/sort_by_round' %>
+<h3>Results</h3>
 <div class="container">
 	<section class="row">
 		<div class="span3 offset1">
 			<span>
-				Round:
+				<strong>Name</strong>
 			</span>
 		</div>
 		<div class="span3">
 			<span>
-				Pick:
+				<strong><%= sortable 'Team' %></strong>
 			</span>
 		</div>
-		<div class="span3">
+		<div class="span2">
 			<span>
-				Team:
+				<strong><%= sortable 'Round' %></strong>
+			</span>
+		</div>
+		<div class="span2">
+			<span>
+				<strong>Pick</strong>
 			</span>
 		</div>
 	</section>
 </div>
+<%= render @ownerships %>

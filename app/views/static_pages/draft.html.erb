@@ -2,12 +2,16 @@
 	<h1>NFL Draft</h1>
 </div>
 
-<%= form_for(Ownership.new) do |f| %>
-	<%= render 'shared/error_messages', object: f.object %>
-	<div class="field">
-	    <%= f.select :player_id, @players %>
-	    <div><%= f.hidden_field :order_id, :value => @order.id %></div>
-	    <div><%= f.hidden_field :team_id, :value => @team.id %></div>
-	  </div>
-	  <%= f.submit "Draft", class: "btn btn-large btn-primary" %>
-<% end %>
+<%= render partial: 'shared/order_info' %>
+
+<div class="container select">
+	<%= form_for(Ownership.new) do |f| %>
+		<%= render 'shared/error_messages', object: f.object %>
+		<div class="field">
+		    <%= f.select :player_id, @players %>
+		    <div><%= f.hidden_field :order_id, :value => @order.id %></div>
+		    <div><%= f.hidden_field :team_id, :value => @team.id %></div>
+		  </div>
+		  <%= f.submit "Draft", class: "btn btn-large btn-primary" %>
+	<% end %>
+</div>
