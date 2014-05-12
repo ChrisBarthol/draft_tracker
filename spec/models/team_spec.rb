@@ -1,12 +1,12 @@
 require 'spec_helper'
 
 describe Team do
-  let(@team) { FactoryGirl.create(:team) }
+  before{ @team = Team.new(name: "Washington Redskins", division:"NFC East") }
 
   subject { @team }
 
   it { should respond_to(:name) }
-  it { should respond_to(:divison) }
+  it { should respond_to(:division) }
 
   describe "when name is not present" do
   	before { @team.name = nil }

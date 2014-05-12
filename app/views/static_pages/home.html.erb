@@ -1,2 +1,14 @@
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<div class="center hero-unit">
+	<h1>Welcome to the NFL Draft Tracker</h1>
+
+	<h3>
+		<p>
+			Follow the draft 
+			<%= link_to "Live!", live_path, class: "btn btn-large btn primary" %>
+		</p>
+		<p>
+			Or view the 
+			<%= link_to "Results!", results_path, class: "btn btn-large btn primary" %>
+		</p>
+	</h3>
+</div>

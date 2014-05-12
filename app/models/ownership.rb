@@ -6,4 +6,7 @@ class Ownership < ActiveRecord::Base
 	validates :player, presence: true
 	validates :team, presence: true
 	validates :order, presence: true
+
+	scope :results_by_round, -> { joins(:order).group_by(&:round) }
+	scope :results_by_team, -> { joins(:team).group_by(&:team) }
 end

@@ -1,4 +1,6 @@
 DraftTracker::Application.routes.draw do
+
+  resources :ownerships
   
   root 'static_pages#home'
   match '/help',      to: 'static_pages#help',    via: 'get'

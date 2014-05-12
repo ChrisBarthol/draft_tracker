@@ -1,2 +1,13 @@
-<h1>StaticPages#draft</h1>
-<p>Find me in app/views/static_pages/draft.html.erb</p>
+<div class="center hero-unit">
+	<h1>NFL Draft</h1>
+</div>
+
+<%= form_for(Ownership.new) do |f| %>
+	<%= render 'shared/error_messages', object: f.object %>
+	<div class="field">
+	    <%= f.select :player_id, @players %>
+	    <div><%= f.hidden_field :order_id, :value => @order.id %></div>
+	    <div><%= f.hidden_field :team_id, :value => @team.id %></div>
+	  </div>
+	  <%= f.submit "Draft", class: "btn btn-large btn-primary" %>
+<% end %>

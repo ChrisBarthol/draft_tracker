@@ -40,4 +40,12 @@ describe "StaticPages" do
     it_should_behave_like "all static pages"
     it { should have_content('Draft Tracker Live') }
   end
+
+  describe "Draft page" do
+  	before { visit live_path }
+  	let(:heading) { 'NFL Draft' }
+  	let(:order) { FactoryGirl.create(:order) }
+
+    it_should_behave_like "all static pages"
+  end
 end
