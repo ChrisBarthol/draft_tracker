@@ -7,6 +7,8 @@ DraftTracker::Application.routes.draw do
   match '/live',     to: 'static_pages#live',   via: 'get'
   match '/draft',   to: 'static_pages#draft', via: 'get'
   match '/results',   to: 'static_pages#results', via: 'get'
+  match '/players/undrafted',   to: 'players#undrafted', via: 'get'
+  match '/players/drafted',   to: 'players#drafted', via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

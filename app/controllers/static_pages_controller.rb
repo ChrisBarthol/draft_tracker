@@ -25,20 +25,25 @@ class StaticPagesController < ApplicationController
       @ownerships = Ownership.order(sort_column + ' ' + sort_direction)
     else
       if params[:input].length > 2
-        team = Team.find_by_name(params[:input])
+        team = Team.find_by_name(sanitize_input)
         @ownerships = Ownership.where(team_id: team.id) #team
       else
-        round = Order.where(round: params[:input])
+        round = Order.where(round: sanitize_input)
         @ownerships = Array.new
         round.each do |round|
           @ownerships += Ownership.where(order_id: round.id) #round
         end
-      end
-      
+      end    
     end
   end
 
   private
+    def sanitize_input
+      input = Team.all.map(&:name)
+      input+= %w[1 2 3 4 5 6]
+      input.include?(params[:input]) ? params[:input] : nil
+    end
+
     def sort_column 
       Ownership.column_names.include?(params[:sort]) ? params[:sort] : "order_id"
     end

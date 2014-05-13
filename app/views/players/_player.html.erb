@@ -10,10 +10,13 @@
 				<%= player.position %>
 			</span>
 		</div>
-		<div class="span4">
-			<span>
-				<%= player.team.name %>
-			</span>
-		</div>
+		<% if player.team.nil? %>
+		<% else %>
+			<div class="span4">
+				<span>
+					<%= player.team.name %>
+				</span>
+			</div>
+		<% end %>
 	</section>
 </div>
