@@ -1,10 +1,12 @@
 FactoryGirl.define do 
 	factory :team do
 		sequence(:name) { |n| "Team #{n}" }
+		division "NFC East"
 	end
 
 	factory :player do
 		sequence(:name) { |n| "Player #{n}" }
+		position "QB"
 	end
 
 	factory :order do

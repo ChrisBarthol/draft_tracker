@@ -1,7 +1,9 @@
 <div class="center hero-unit">
 	<h1>NFL Draft</h1>
 </div>
-
+<% if @order ==nil %>
+Draft over
+<% else %>
 <%= render partial: 'shared/order_info' %>
 
 <div class="container select">
@@ -12,6 +14,8 @@
 		    <div><%= f.hidden_field :order_id, :value => @order.id %></div>
 		    <div><%= f.hidden_field :team_id, :value => @team.id %></div>
 		  </div>
-		  <%= f.submit "Draft", class: "btn btn-large btn-primary" %>
+		  <%= f.submit "Draft Player", class: "btn btn-large btn-primary" %>
 	<% end %>
 </div>
+<% end %>
+

@@ -2,10 +2,14 @@
 	<h1>NFL Draft Live</h1>
 	<h2> You are viewing the Draft Tracker Live! </h2>
 </div>
+<% if @order ==nil %>
+The draft is over
+<% else %>
 <div class="current">
 	<h1 class="pull-left">Current Round and Pick</h1>
 <h3><%= render partial: 'shared/order_info' %></h3>
 </div>
+<% end %>
 
 <div class="last-three">
 	<h1 class="pull-left"> Last Three draft picks </h1>

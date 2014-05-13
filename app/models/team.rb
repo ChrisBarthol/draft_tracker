@@ -6,7 +6,4 @@ class Team < ActiveRecord::Base
 	validates :name, presence: true, uniqueness: { case_sensitive: false }
 	validates :division, presence: true
 
-	def acquire(player)
-		players << player
-	end
 end

@@ -9,7 +9,7 @@ Feature: Live
     	Then I should see the three players listed
 
     Scenario: Show the next team to draft
-    	Given a drafter player and an order
+    	Given a drafted player and an order
     	When I visit the live page
     	Then I should see the next order
 

@@ -1,4 +1,13 @@
 require 'csv'
+require 'rubygems'
+require 'capybara'
+require 'capybara/dsl'
+
+include Capybara::DSL
+
+Capybara.run_server = true
+Capybara.current_driver = :selenium
+Capybara.app_host = 'localhost:3000'
 
 Data = "#{Rails.root}/db"
 
@@ -33,6 +42,12 @@ namespace :draft do
 	end
 
 	task dodraft: :environment do
-		draft
+		visit '/draft'
+		click_link 'Draft'
+		while Order.next.first != nil do
+			click_button 'Draft Player'
+		end
+		click_link 'Results'
+		sleep 100 #see results for 100 seconds
 	end
 end
