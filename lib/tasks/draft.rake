@@ -3,7 +3,7 @@ require 'rubygems'
 require 'capybara'
 require 'capybara/dsl'
 
-include Capybara::DSL
+
 
 Capybara.run_server = true
 Capybara.current_driver = :selenium
@@ -40,7 +40,8 @@ namespace :draft do
 			Order.new(round: row["Round"].strip, pick: row["Pick"].strip, team_id: team.id).save!
 		end
 	end
-
+	
+	include Capybara::DSL
 	task dodraft: :environment do
 		visit '/draft'
 		click_link 'Draft'

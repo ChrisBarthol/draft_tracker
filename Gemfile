@@ -15,6 +15,7 @@ gem 'jquery-rails', '2.2.1'
 gem 'turbolinks', '1.1.1'
 gem 'jbuilder', '1.0.2'
 gem 'jquery-ui-rails'
+gem 'capybara'
 
 group :development, :test do
   gem 'rspec-rails'
@@ -25,7 +26,6 @@ end
 
 group :test do
   gem 'selenium-webdriver'
-  gem 'capybara'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
   gem 'cucumber-rails'
