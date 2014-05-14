@@ -1,3 +1,5 @@
+require 'rake'
+
 Given(/^(\d+) drafted players$/) do |num|
   @ownership_1 = FactoryGirl.create(:ownership, player: FactoryGirl.create(:player, name:"One"))
   @ownership_2 = FactoryGirl.create(:ownership, player: FactoryGirl.create(:player, name:"Two"))
@@ -27,9 +29,10 @@ Then(/^I should see the next order$/) do
 end
 
 Given(/^the order is over$/) do
-  Order.next = nil
+  Order.next.first==nil
 end
 
 Then(/^I should see "(.*?)"$/) do |message|
-  page.should have_content message
+	visit live_path
+ 	page.should have_content message
 end

@@ -12,9 +12,19 @@
 		</div>
 		<% if player.team.nil? %>
 		<% else %>
-			<div class="span4">
+			<div class="span3">
 				<span>
 					<%= player.team.name %>
+				</span>
+			</div>
+			<div class="span1">
+				<span>
+					<%= player.ownership.order.round %>
+				</span>
+			</div>
+			<div class="span1">
+				<span>
+					<%= player.ownership.order.pick %>
 				</span>
 			</div>
 		<% end %>

@@ -1,4 +1,22 @@
 <div class="center hero-unit">
 	<h1>Undrafted Players</h1>
 </div>
+<h3>Sort by Position</h3>
+<%= render partial: 'sort_by_position' %>
+<h3>Players</h3>
+<div class="container">
+	<section class="row">
+		<div class="span2 offset1">
+			<span>
+				<strong>Name</strong>
+			</span>
+		</div>
+		<div class="span2 center">
+			<span>
+				<strong>Position</strong>
+			</span>
+		</div>
+	</section>
+</div>
+
 <%= render @undrafted %>

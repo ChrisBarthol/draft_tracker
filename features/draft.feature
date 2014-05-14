@@ -5,8 +5,7 @@ Feature: Draft
     (which is defined by the draft order)
 
     Scenario: Show info on draft page
-    	Given an order with round 1 and pick 15
-    	And a team "Philadelphia Eagles"
+    	Given an order with round 1 and pick 15 a team "Philadelphia Eagles"
     	When I visit the draft page
     	Then I should see "Round: 1"
     	And I should see "Pick: 15"
@@ -23,6 +22,5 @@ Feature: Draft
     	Given two orders, two players, and two teams
     	When I draft a player
     	Then the player should have an owner
-    	And the drafted player should not be in the draft list
     	And the second order and team should be displayed
 

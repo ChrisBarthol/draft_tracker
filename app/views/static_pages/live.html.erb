@@ -1,32 +1,44 @@
 <div class="center hero-unit">
 	<h1>NFL Draft Live</h1>
+	<% if @order ==nil %>
+	<h2> The draft is currently over. </h2>
+	<% else %>
 	<h2> You are viewing the Draft Tracker Live! </h2>
+	<% end %>
 </div>
 <% if @order ==nil %>
-The draft is over
+<%= render partial: 'shared/draft_over' %>
 <% else %>
-<div class="current">
-	<h1 class="pull-left">Current Round and Pick</h1>
-<h3><%= render partial: 'shared/order_info' %></h3>
-</div>
+
+<%= render partial: 'shared/order_info' %>
 <% end %>
 
 <div class="last-three">
-	<h1 class="pull-left"> Last Three draft picks </h1>
+	<h3 class="pull-left"> Last Three draft picks </h3>
 	<section class="row bold">
 		<div class="span3 offset1">
 			<span>
-				Name
+				<strong>Name</strong>
 			</span>
 		</div>
 		<div class="span2">
 			<span>
-				Position
+				<strong>Position</strong>
 			</span>
 		</div>
-		<div class="span4">
+		<div class="span3">
 			<span>
-				Team
+				<strong>Team</strong>
+			</span>
+		</div>
+		<div class="span1">
+			<span>
+				<strong>Round</strong>
+			</span>
+		</div>
+		<div class="span1">
+			<span>
+				<strong>Pick</strong>
 			</span>
 		</div>
 	</section>

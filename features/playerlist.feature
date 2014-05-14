@@ -4,8 +4,8 @@ Feature: Playerlist
     I want to be able to view all remaining players alphabetically by position
 
 	Scenario: View undrafted players
-		Given two undrafted players with position "QB"
-		And two undrafted players with position "RB"
+		Given two undrafted players with position QB
+		And two undrafted players with position TE
 		And a drafted player
 		When I visit the playerlist
 		Then the undrafted players should be listed alphabetically by position

@@ -2,14 +2,15 @@
 	<h1>NFL Draft</h1>
 </div>
 <% if @order ==nil %>
-Draft over
+<%= render partial: 'shared/draft_over' %>
 <% else %>
 <%= render partial: 'shared/order_info' %>
 
-<div class="container select">
+<div class="container select center">
 	<%= form_for(Ownership.new) do |f| %>
 		<%= render 'shared/error_messages', object: f.object %>
 		<div class="field">
+			<%= f.label "Player" %>
 		    <%= f.select :player_id, @players %>
 		    <div><%= f.hidden_field :order_id, :value => @order.id %></div>
 		    <div><%= f.hidden_field :team_id, :value => @team.id %></div>
