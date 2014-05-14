@@ -6,7 +6,7 @@ This app allows the NFL to perform their draft selection.  A user is allowed to 
 
 ```
 git clone https://github.com/ChrisBarthol/draft_tracker.git
-bundle install #install dependecies
+bundle install #install dependencies
 rake draft:populate #populate the database
 ```
 
