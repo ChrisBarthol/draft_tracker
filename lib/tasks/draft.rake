@@ -49,6 +49,6 @@ namespace :draft do
 			click_button 'Draft Player'
 		end
 		click_link 'Results'
-		sleep 50 #see results for 50 seconds
+		sleep 30 #see results for 30 seconds
 	end
 end

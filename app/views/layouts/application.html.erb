@@ -6,11 +6,19 @@
                                            "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
-    <%= render 'layouts/shim' %>
+    <%= render 'layouts/shim' %> <!-- For IE -->
   </head>
   <body>
     <%= render 'layouts/header' %>
     <div class="container">
+      <!-- Render flash messages -->
+      <% flash.each do |name, msg| %>
+        <div class="alert alert-<%=(name == :notice && 'success' or name == :warning && 'warning' or name == :info && 'info' or 'error')%>">
+
+          <a class="close" data-dismiss="alert">×</a>
+          <%= msg %>
+        </div>
+      <% end %>
       <%= yield %>
       <%= render 'layouts/footer' %>
     </div>

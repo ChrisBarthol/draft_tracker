@@ -26,6 +26,7 @@ describe "StaticPages" do
   describe "Results page" do
   	before { visit results_path }
   	let(:heading) { 'NFL Draft Results' }
+  	let!(:team1) { FactoryGirl.create(:team) }
 
     it_should_behave_like "all static pages"
     it { should have_content('Round') }
@@ -41,11 +42,11 @@ describe "StaticPages" do
   	let(:team) { FactoryGirl.create(:team) }
 
     it_should_behave_like "all static pages"
-    it { should have_content('Draft Tracker Live') }
+    it { should have_content('Last Three') }
   end
 
   describe "Draft page" do
-  	before { visit live_path }
+  	before { visit draft_path }
   	let(:heading) { 'NFL Draft' }
   	let(:order) { FactoryGirl.create(:order) }
   	let(:player) { FactoryGirl.create(:player)}

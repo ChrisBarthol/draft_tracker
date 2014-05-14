@@ -20,7 +20,7 @@ When(/^I visit the playerlist$/) do
 end
 
 Then(/^the undrafted players should be listed alphabetically by position$/) do
-  Player.should == [@player_3,@player_4,@player_2,@player_1]
+  Player.undrafted.by_position.should == [@player_2,@player_1,@player_3,@player_4]
 end
 
 Then(/^the drafted player should not be listed$/) do

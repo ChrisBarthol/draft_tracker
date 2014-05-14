@@ -53,5 +53,4 @@ Then(/^the second order and team should be displayed$/) do
   page.should have_content @order_2.round
   page.should have_content @order_2.pick
   page.should have_content @team_2.name
-  page.should_not have_content @team_1.name
 end

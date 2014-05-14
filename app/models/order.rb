@@ -4,6 +4,7 @@ class Order < ActiveRecord::Base
 
 	validates :round, presence: true
 	validates :pick, presence: true
+	validates :team, presence: true
 
 	scope :next, -> { where.not(id: Ownership.all.map(&:order_id)) }
 
